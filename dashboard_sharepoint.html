@@ -535,6 +535,13 @@
                 </div>
             </div>
             
+            <!-- P90 Chart - Full width -->
+            <div class="chart-container" style="margin-bottom: 24px;">
+                <h3 class="chart-title">📐 Disponibilidad Percentil 90 (Período seleccionado)</h3>
+                <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">El 90% del tiempo, el equipo estuvo disponible en máximo estos días. Un valor más bajo indica mayor disponibilidad.</p>
+                <canvas id="p90Chart"></canvas>
+            </div>
+            
             <!-- Table -->
             <div class="table-container">
                 <div class="table-header">
@@ -881,7 +888,7 @@ function renderProductCards() {
 // HISTORY TAB
 // ============================================================
 
-let lineChart, barChart;
+let lineChart, barChart, p90Chart;
 
 function renderHistoryCharts() {
     const data = filteredData;
@@ -941,6 +948,74 @@ function renderHistoryCharts() {
             responsive: true, maintainAspectRatio: true,
             plugins: { legend: { display: false } },
             scales: { y: { beginAtZero: true, title: { display: true, text: 'Días Promedio' } } }
+        }
+    });
+    
+    // P90 Chart - Percentile 90 per product
+    function calcPercentile(arr, p) {
+        if (arr.length === 0) return 0;
+        const sorted = [...arr].sort((a, b) => a - b);
+        const index = (p / 100) * (sorted.length - 1);
+        const lower = Math.floor(index);
+        const upper = Math.ceil(index);
+        if (lower === upper) return sorted[lower];
+        return sorted[lower] + (sorted[upper] - sorted[lower]) * (index - lower);
+    }
+    
+    const p90Data = products.map(product => {
+        const values = data.filter(d => d.producto === product).map(d => d.dias);
+        return parseFloat(calcPercentile(values, 90).toFixed(1));
+    });
+    
+    const p90Ctx = document.getElementById('p90Chart').getContext('2d');
+    if (p90Chart) p90Chart.destroy();
+    p90Chart = new Chart(p90Ctx, {
+        type: 'bar',
+        data: {
+            labels: products,
+            datasets: [
+                {
+                    label: 'P90 (días)',
+                    data: p90Data,
+                    backgroundColor: products.map(p => colors[p] + 'CC'),
+                    borderColor: products.map(p => colors[p]),
+                    borderWidth: 2,
+                    borderRadius: 6
+                },
+                {
+                    label: 'Promedio (días)',
+                    data: avgData,
+                    backgroundColor: products.map(p => colors[p] + '40'),
+                    borderColor: products.map(p => colors[p] + '80'),
+                    borderWidth: 1,
+                    borderRadius: 6
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        label: function(ctx) {
+                            const label = ctx.dataset.label;
+                            const val = ctx.parsed.y;
+                            if (label.includes('P90')) {
+                                return `${label}: ${val} días — El 90% de las veces fue ≤ ${val} días`;
+                            }
+                            return `${label}: ${val}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Días de Espera' }
+                }
+            }
         }
     });
 }
