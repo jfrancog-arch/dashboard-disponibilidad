@@ -575,120 +575,716 @@
 // ============================================================
 
 const currentData = [
-    {"producto":"Nómina","fecha":"02/03/2026","dias":0,"url":"https://meetings.hubspot.com/loggro/nomina","css_class":"nomina","es_masivas":false},
-    {"producto":"Alojamientos","fecha":"02/03/2026","dias":1,"url":"https://meetings.hubspot.com/loggro/alojamientos","css_class":"alojamientos","es_masivas":false},
-    {"producto":"Restobar","fecha":"03/03/2026","dias":1,"url":"https://meetings.hubspot.com/loggro/restobar","css_class":"restobar","es_masivas":false},
-    {"producto":"POS Tienda","fecha":"03/03/2026","dias":1,"url":"https://meetings.hubspot.com/loggro/pos-tienda","css_class":"pos","es_masivas":false},
-    {"producto":"ERP","fecha":"04/03/2026","dias":2,"url":"https://meetings.hubspot.com/loggro/rotacion-erp","css_class":"erp","es_masivas":false},
-    {"producto":"Sesiones Masivas","fecha":null,"dias":null,"url":"https://tuloggro.sharepoint.com/:u:/s/FormacionLoggro/EWtHzF6XsJpGtymdOR3g4WQBfGauF7CZ431Qomk5scxX2g?e=F0tnZk","css_class":"masivas","es_masivas":true}
+    {
+        "producto": "Nómina",
+        "fecha": "03/03/2026",
+        "dias": 0,
+        "url": "https://meetings.hubspot.com/loggro/nomina",
+        "css_class": "nomina",
+        "es_masivas": false
+    },
+    {
+        "producto": "Restobar",
+        "fecha": "03/03/2026",
+        "dias": 0,
+        "url": "https://meetings.hubspot.com/loggro/restobar",
+        "css_class": "restobar",
+        "es_masivas": false
+    },
+    {
+        "producto": "POS Tienda",
+        "fecha": "03/03/2026",
+        "dias": 0,
+        "url": "https://meetings.hubspot.com/loggro/pos-tienda",
+        "css_class": "pos",
+        "es_masivas": false
+    },
+    {
+        "producto": "ERP",
+        "fecha": "04/03/2026",
+        "dias": 1,
+        "url": "https://meetings.hubspot.com/loggro/rotacion-erp",
+        "css_class": "erp",
+        "es_masivas": false
+    },
+    {
+        "producto": "Alojamientos",
+        "fecha": "04/03/2026",
+        "dias": 1,
+        "url": "https://meetings.hubspot.com/loggro/alojamientos",
+        "css_class": "alojamientos",
+        "es_masivas": false
+    },
+    {
+        "producto": "Sesiones Masivas",
+        "fecha": null,
+        "dias": null,
+        "url": "https://tuloggro.sharepoint.com/:u:/s/FormacionLoggro/EWtHzF6XsJpGtymdOR3g4WQBfGauF7CZ431Qomk5scxX2g?e=F0tnZk",
+        "css_class": "masivas",
+        "es_masivas": true
+    }
 ];
-
 const historicalData = [
-    {"fecha":"02/02/2026","producto":"ERP","dias":0,"fecha_disponible":"02/02/2026"},
-    {"fecha":"02/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"03/02/2026"},
-    {"fecha":"02/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"02/02/2026"},
-    {"fecha":"02/02/2026","producto":"Restobar","dias":2,"fecha_disponible":"04/02/2026"},
-    {"fecha":"02/02/2026","producto":"POS Tienda","dias":2,"fecha_disponible":"04/02/2026"},
-    {"fecha":"03/02/2026","producto":"ERP","dias":0,"fecha_disponible":"03/02/2026"},
-    {"fecha":"03/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"04/02/2026"},
-    {"fecha":"03/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"03/02/2026"},
-    {"fecha":"03/02/2026","producto":"Restobar","dias":2,"fecha_disponible":"05/02/2026"},
-    {"fecha":"03/02/2026","producto":"POS Tienda","dias":2,"fecha_disponible":"05/02/2026"},
-    {"fecha":"04/02/2026","producto":"ERP","dias":0,"fecha_disponible":"04/02/2026"},
-    {"fecha":"04/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"04/02/2026"},
-    {"fecha":"04/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"04/02/2026"},
-    {"fecha":"04/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"05/02/2026"},
-    {"fecha":"04/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"05/02/2026"},
-    {"fecha":"05/02/2026","producto":"ERP","dias":0,"fecha_disponible":"05/02/2026"},
-    {"fecha":"05/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"06/02/2026"},
-    {"fecha":"05/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"05/02/2026"},
-    {"fecha":"05/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"06/02/2026"},
-    {"fecha":"05/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"06/02/2026"},
-    {"fecha":"06/02/2026","producto":"ERP","dias":0,"fecha_disponible":"06/02/2026"},
-    {"fecha":"06/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"09/02/2026"},
-    {"fecha":"06/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"06/02/2026"},
-    {"fecha":"06/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"09/02/2026"},
-    {"fecha":"06/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"09/02/2026"},
-    {"fecha":"09/02/2026","producto":"ERP","dias":0,"fecha_disponible":"09/02/2026"},
-    {"fecha":"09/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"09/02/2026"},
-    {"fecha":"09/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"09/02/2026"},
-    {"fecha":"09/02/2026","producto":"Restobar","dias":2,"fecha_disponible":"11/02/2026"},
-    {"fecha":"09/02/2026","producto":"POS Tienda","dias":2,"fecha_disponible":"11/02/2026"},
-    {"fecha":"10/02/2026","producto":"ERP","dias":0,"fecha_disponible":"10/02/2026"},
-    {"fecha":"10/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"10/02/2026"},
-    {"fecha":"10/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"11/02/2026"},
-    {"fecha":"10/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"11/02/2026"},
-    {"fecha":"10/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"11/02/2026"},
-    {"fecha":"11/02/2026","producto":"ERP","dias":0,"fecha_disponible":"11/02/2026"},
-    {"fecha":"11/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"11/02/2026"},
-    {"fecha":"11/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"12/02/2026"},
-    {"fecha":"11/02/2026","producto":"Restobar","dias":2,"fecha_disponible":"13/02/2026"},
-    {"fecha":"11/02/2026","producto":"POS Tienda","dias":2,"fecha_disponible":"13/02/2026"},
-    {"fecha":"12/02/2026","producto":"ERP","dias":0,"fecha_disponible":"12/02/2026"},
-    {"fecha":"12/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"12/02/2026"},
-    {"fecha":"12/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"13/02/2026"},
-    {"fecha":"12/02/2026","producto":"Restobar","dias":2,"fecha_disponible":"17/02/2026"},
-    {"fecha":"12/02/2026","producto":"POS Tienda","dias":2,"fecha_disponible":"17/02/2026"},
-    {"fecha":"13/02/2026","producto":"ERP","dias":0,"fecha_disponible":"13/02/2026"},
-    {"fecha":"13/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"13/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"13/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"13/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"16/02/2026","producto":"ERP","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"16/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"16/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"16/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"16/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"17/02/2026"},
-    {"fecha":"17/02/2026","producto":"ERP","dias":1,"fecha_disponible":"18/02/2026"},
-    {"fecha":"17/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"17/02/2026"},
-    {"fecha":"17/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"17/02/2026"},
-    {"fecha":"17/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"18/02/2026"},
-    {"fecha":"17/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"18/02/2026"},
-    {"fecha":"18/02/2026","producto":"ERP","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"18/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"18/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"18/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"18/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"19/02/2026","producto":"ERP","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"19/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"19/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"19/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"19/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"19/02/2026"},
-    {"fecha":"20/02/2026","producto":"ERP","dias":1,"fecha_disponible":"20/02/2026"},
-    {"fecha":"20/02/2026","producto":"Nómina","dias":1,"fecha_disponible":"20/02/2026"},
-    {"fecha":"20/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"20/02/2026"},
-    {"fecha":"20/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"20/02/2026"},
-    {"fecha":"20/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"20/02/2026"},
-    {"fecha":"23/02/2026","producto":"ERP","dias":1,"fecha_disponible":"24/02/2026"},
-    {"fecha":"23/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"23/02/2026"},
-    {"fecha":"23/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"24/02/2026"},
-    {"fecha":"23/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"24/02/2026"},
-    {"fecha":"23/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"24/02/2026"},
-    {"fecha":"24/02/2026","producto":"ERP","dias":1,"fecha_disponible":"25/02/2026"},
-    {"fecha":"24/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"24/02/2026"},
-    {"fecha":"24/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"25/02/2026"},
-    {"fecha":"24/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"25/02/2026"},
-    {"fecha":"24/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"25/02/2026"},
-    {"fecha":"25/02/2026","producto":"ERP","dias":1,"fecha_disponible":"26/02/2026"},
-    {"fecha":"25/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"25/02/2026"},
-    {"fecha":"25/02/2026","producto":"Alojamientos","dias":0,"fecha_disponible":"25/02/2026"},
-    {"fecha":"25/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"26/02/2026"},
-    {"fecha":"25/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"26/02/2026"},
-    {"fecha":"26/02/2026","producto":"ERP","dias":0,"fecha_disponible":"26/02/2026"},
-    {"fecha":"26/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"26/02/2026"},
-    {"fecha":"26/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"27/02/2026"},
-    {"fecha":"26/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"27/02/2026"},
-    {"fecha":"26/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"27/02/2026"},
-    {"fecha":"27/02/2026","producto":"ERP","dias":1,"fecha_disponible":"02/03/2026"},
-    {"fecha":"27/02/2026","producto":"Nómina","dias":0,"fecha_disponible":"27/02/2026"},
-    {"fecha":"27/02/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"02/03/2026"},
-    {"fecha":"27/02/2026","producto":"Restobar","dias":1,"fecha_disponible":"02/03/2026"},
-    {"fecha":"27/02/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"02/03/2026"},
-    {"fecha":"02/03/2026","producto":"ERP","dias":2,"fecha_disponible":"04/03/2026"},
-    {"fecha":"02/03/2026","producto":"Nómina","dias":0,"fecha_disponible":"02/03/2026"},
-    {"fecha":"02/03/2026","producto":"Alojamientos","dias":1,"fecha_disponible":"02/03/2026"},
-    {"fecha":"02/03/2026","producto":"Restobar","dias":1,"fecha_disponible":"03/03/2026"},
-    {"fecha":"02/03/2026","producto":"POS Tienda","dias":1,"fecha_disponible":"03/03/2026"}
+    {
+        "fecha": "02/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "02/02/2026"
+    },
+    {
+        "fecha": "02/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "03/02/2026"
+    },
+    {
+        "fecha": "02/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "02/02/2026"
+    },
+    {
+        "fecha": "02/02/2026",
+        "producto": "Restobar",
+        "dias": 2,
+        "fecha_disponible": "04/02/2026"
+    },
+    {
+        "fecha": "02/02/2026",
+        "producto": "POS Tienda",
+        "dias": 2,
+        "fecha_disponible": "04/02/2026"
+    },
+    {
+        "fecha": "03/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "03/02/2026"
+    },
+    {
+        "fecha": "03/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "04/02/2026"
+    },
+    {
+        "fecha": "03/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "03/02/2026"
+    },
+    {
+        "fecha": "03/02/2026",
+        "producto": "Restobar",
+        "dias": 2,
+        "fecha_disponible": "05/02/2026"
+    },
+    {
+        "fecha": "03/02/2026",
+        "producto": "POS Tienda",
+        "dias": 2,
+        "fecha_disponible": "05/02/2026"
+    },
+    {
+        "fecha": "04/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "04/02/2026"
+    },
+    {
+        "fecha": "04/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "04/02/2026"
+    },
+    {
+        "fecha": "04/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "04/02/2026"
+    },
+    {
+        "fecha": "04/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "05/02/2026"
+    },
+    {
+        "fecha": "04/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "05/02/2026"
+    },
+    {
+        "fecha": "05/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "05/02/2026"
+    },
+    {
+        "fecha": "05/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "06/02/2026"
+    },
+    {
+        "fecha": "05/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "05/02/2026"
+    },
+    {
+        "fecha": "05/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "06/02/2026"
+    },
+    {
+        "fecha": "05/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "06/02/2026"
+    },
+    {
+        "fecha": "06/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "06/02/2026"
+    },
+    {
+        "fecha": "06/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "09/02/2026"
+    },
+    {
+        "fecha": "06/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "06/02/2026"
+    },
+    {
+        "fecha": "06/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "09/02/2026"
+    },
+    {
+        "fecha": "06/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "09/02/2026"
+    },
+    {
+        "fecha": "09/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "09/02/2026"
+    },
+    {
+        "fecha": "09/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "09/02/2026"
+    },
+    {
+        "fecha": "09/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "09/02/2026"
+    },
+    {
+        "fecha": "09/02/2026",
+        "producto": "Restobar",
+        "dias": 2,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "09/02/2026",
+        "producto": "POS Tienda",
+        "dias": 2,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "10/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "10/02/2026"
+    },
+    {
+        "fecha": "10/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "10/02/2026"
+    },
+    {
+        "fecha": "10/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "10/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "10/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "11/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "11/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "11/02/2026"
+    },
+    {
+        "fecha": "11/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "12/02/2026"
+    },
+    {
+        "fecha": "11/02/2026",
+        "producto": "Restobar",
+        "dias": 2,
+        "fecha_disponible": "13/02/2026"
+    },
+    {
+        "fecha": "11/02/2026",
+        "producto": "POS Tienda",
+        "dias": 2,
+        "fecha_disponible": "13/02/2026"
+    },
+    {
+        "fecha": "12/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "12/02/2026"
+    },
+    {
+        "fecha": "12/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "12/02/2026"
+    },
+    {
+        "fecha": "12/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "13/02/2026"
+    },
+    {
+        "fecha": "12/02/2026",
+        "producto": "Restobar",
+        "dias": 2,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "12/02/2026",
+        "producto": "POS Tienda",
+        "dias": 2,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "13/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "13/02/2026"
+    },
+    {
+        "fecha": "13/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "13/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "13/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "13/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "16/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "16/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "16/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "16/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "16/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "17/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "18/02/2026"
+    },
+    {
+        "fecha": "17/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "17/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "17/02/2026"
+    },
+    {
+        "fecha": "17/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "18/02/2026"
+    },
+    {
+        "fecha": "17/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "18/02/2026"
+    },
+    {
+        "fecha": "18/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "18/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "18/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "18/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "18/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "19/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "19/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "19/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "19/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "19/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "19/02/2026"
+    },
+    {
+        "fecha": "20/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "20/02/2026"
+    },
+    {
+        "fecha": "20/02/2026",
+        "producto": "Nómina",
+        "dias": 1,
+        "fecha_disponible": "20/02/2026"
+    },
+    {
+        "fecha": "20/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "20/02/2026"
+    },
+    {
+        "fecha": "20/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "20/02/2026"
+    },
+    {
+        "fecha": "20/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "20/02/2026"
+    },
+    {
+        "fecha": "23/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "24/02/2026"
+    },
+    {
+        "fecha": "23/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "23/02/2026"
+    },
+    {
+        "fecha": "23/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "24/02/2026"
+    },
+    {
+        "fecha": "23/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "24/02/2026"
+    },
+    {
+        "fecha": "23/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "24/02/2026"
+    },
+    {
+        "fecha": "24/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "25/02/2026"
+    },
+    {
+        "fecha": "24/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "24/02/2026"
+    },
+    {
+        "fecha": "24/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "25/02/2026"
+    },
+    {
+        "fecha": "24/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "25/02/2026"
+    },
+    {
+        "fecha": "24/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "25/02/2026"
+    },
+    {
+        "fecha": "25/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "26/02/2026"
+    },
+    {
+        "fecha": "25/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "25/02/2026"
+    },
+    {
+        "fecha": "25/02/2026",
+        "producto": "Alojamientos",
+        "dias": 0,
+        "fecha_disponible": "25/02/2026"
+    },
+    {
+        "fecha": "25/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "26/02/2026"
+    },
+    {
+        "fecha": "25/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "26/02/2026"
+    },
+    {
+        "fecha": "26/02/2026",
+        "producto": "ERP",
+        "dias": 0,
+        "fecha_disponible": "26/02/2026"
+    },
+    {
+        "fecha": "26/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "26/02/2026"
+    },
+    {
+        "fecha": "26/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "27/02/2026"
+    },
+    {
+        "fecha": "26/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "27/02/2026"
+    },
+    {
+        "fecha": "26/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "27/02/2026"
+    },
+    {
+        "fecha": "27/02/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "02/03/2026"
+    },
+    {
+        "fecha": "27/02/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "27/02/2026"
+    },
+    {
+        "fecha": "27/02/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "02/03/2026"
+    },
+    {
+        "fecha": "27/02/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "02/03/2026"
+    },
+    {
+        "fecha": "27/02/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "02/03/2026"
+    },
+    {
+        "fecha": "02/03/2026",
+        "producto": "ERP",
+        "dias": 2,
+        "fecha_disponible": "04/03/2026"
+    },
+    {
+        "fecha": "02/03/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "02/03/2026"
+    },
+    {
+        "fecha": "02/03/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "02/03/2026"
+    },
+    {
+        "fecha": "02/03/2026",
+        "producto": "Restobar",
+        "dias": 1,
+        "fecha_disponible": "03/03/2026"
+    },
+    {
+        "fecha": "02/03/2026",
+        "producto": "POS Tienda",
+        "dias": 1,
+        "fecha_disponible": "03/03/2026"
+    },
+    {
+        "fecha": "03/03/2026",
+        "producto": "ERP",
+        "dias": 1,
+        "fecha_disponible": "04/03/2026"
+    },
+    {
+        "fecha": "03/03/2026",
+        "producto": "Nómina",
+        "dias": 0,
+        "fecha_disponible": "03/03/2026"
+    },
+    {
+        "fecha": "03/03/2026",
+        "producto": "Restobar",
+        "dias": 0,
+        "fecha_disponible": "03/03/2026"
+    },
+    {
+        "fecha": "03/03/2026",
+        "producto": "Alojamientos",
+        "dias": 1,
+        "fecha_disponible": "04/03/2026"
+    },
+    {
+        "fecha": "03/03/2026",
+        "producto": "POS Tienda",
+        "dias": 0,
+        "fecha_disponible": "03/03/2026"
+    }
 ];
 
 // ============================================================
