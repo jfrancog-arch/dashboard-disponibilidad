@@ -1,0 +1,14 @@
+Logo: https://tuloggro.sharepoint.com/Shared%20Documents/KIT%20DE%20MEDIOS%20NUEVA%20MARCA/Logo%20Loggro.png
+
+Actualizar:
+
+python actualizar_con_historial.py
+se siguen los pasos para establecer disponibilidad
+Ejemplo: 
+Fecha: 23/02/2026
+Dias de espera: 1
+
+git add -A
+git commit -m "Actualizar disponibilidad"
+git push
+
