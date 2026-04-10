@@ -1438,5 +1438,35 @@
     "producto": "POS Tienda",
     "dias": 1,
     "fecha_disponible": "10/04/2026"
+  },
+  {
+    "fecha": "10/04/2026",
+    "producto": "ERP",
+    "dias": 1,
+    "fecha_disponible": "13/04/2026"
+  },
+  {
+    "fecha": "10/04/2026",
+    "producto": "Nómina",
+    "dias": 1,
+    "fecha_disponible": "13/04/2026"
+  },
+  {
+    "fecha": "10/04/2026",
+    "producto": "Restobar",
+    "dias": 2,
+    "fecha_disponible": "14/04/2026"
+  },
+  {
+    "fecha": "10/04/2026",
+    "producto": "Alojamientos",
+    "dias": 2,
+    "fecha_disponible": "14/04/2026"
+  },
+  {
+    "fecha": "10/04/2026",
+    "producto": "POS Tienda",
+    "dias": 2,
+    "fecha_disponible": "14/04/2026"
   }
 ]
