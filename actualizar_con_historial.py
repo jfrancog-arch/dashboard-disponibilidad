@@ -25,11 +25,11 @@ PRODUCT_COLORS = {
 }
 
 PRODUCT_URLS = {
-    "ERP": "https://meetings.hubspot.com/loggro/rotacion-erp",
-    "Nómina": "https://meetings.hubspot.com/loggro/nomina",
-    "Restobar": "https://meetings.hubspot.com/loggro/restobar",
-    "Alojamientos": "https://meetings.hubspot.com/loggro/alojamientos",
-    "POS Tienda": "https://meetings.hubspot.com/loggro/pos-tienda",
+    "ERP": "https://meetings.hubspot.com/sechubspot/rotacion-erp",
+    "Nómina": "https://meetings.hubspot.com/sechubspot/loggro-nomina",
+    "Restobar": "https://meetings.hubspot.com/sechubspot/loggro-restobar",
+    "Alojamientos": "https://meetings.hubspot.com/sechubspot/reunion-alojamiento",
+    "POS Tienda": "https://meetings.hubspot.com/sechubspot/loggro-pos-tienda",
     "Sesiones Masivas": "https://tuloggro.sharepoint.com/:u:/s/FormacionLoggro/EWtHzF6XsJpGtymdOR3g4WQBfGauF7CZ431Qomk5scxX2g?e=F0tnZk"
 }
 
